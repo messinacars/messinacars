@@ -25,6 +25,7 @@
             text-align: center;
             background-color: #444;
             padding: 10px 0;
+            position: relative;
         }
         nav a {
             color: white;
@@ -35,6 +36,33 @@
         nav a:hover {
             color: #FFD700;
         }
+        /* Dropdown-Menu-Stile */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+            border-radius: 5px;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #FFD700;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
         .container {
             width: 80%;
             margin: 0 auto;
@@ -108,7 +136,13 @@
 
 <nav>
     <a href="#home">Startseite</a>
-    <a href="https://www.mobile.de" target="_blank">Fahrzeuge</a> <!-- Link zu mobile.de -->
+    <div class="dropdown">
+        <a href="#">Fahrzeuge</a>
+        <div class="dropdown-content">
+            <a href="https://www.mobile.de" target="_blank">mobile.de</a>
+            <a href="https://www.kleinanzeigen.de/s-bestandsliste.html?userId=135053599" target="_blank">eBay Kleinanzeigen</a>
+        </div>
+    </div>
     <a href="#contact">Kontakt</a>
     <a href="#impressum">Impressum</a> <!-- Neuer Reiter für Impressum -->
 </nav>
@@ -173,7 +207,7 @@
         <p><strong>Messina Cars & Co.</strong></p>
         <p>Friedrichshafen</p>
         <p>Inhaber: Antonino Messina</p>
-        <p>Adresse: 88048 Friedrichshafen</p>
+        <p>Adresse: Bodenseestr.6, 88048 Friedrichshafen</p>
         <p>Telefon: +49 123 456 789</p>
         <p>E-Mail: <a href="mailto:antromessi@icloud.com">antromessi@icloud.com</a></p>
         <p>USt-IdNr.: DE123456789</p>
